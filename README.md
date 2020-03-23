@@ -1,7 +1,7 @@
-### profiler
+# profiler
 ## Repository with code for profiling other functions.
 
-# pip install -i https://test.pypi.org/simple/ profiler-connosieurofdoom
+### pip install -i https://test.pypi.org/simple/ profiler-connosieurofdoom
 
 Prints the CPU and memory usage.
 
