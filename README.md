@@ -1,2 +1,4 @@
 # profiler
-Code for profiling functions
+Repository with code for profiling other functions.
+
+Prints the CPU and memory usage
