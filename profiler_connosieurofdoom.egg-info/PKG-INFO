@@ -1,17 +1,26 @@
 Metadata-Version: 2.1
 Name: profiler-connosieurofdoom
-Version: 0.1.1
+Version: 0.1.2
 Summary: Print memory and cpu usage
 Home-page: https://github.com/connosieurofdoom/profiler
 Author: Shreyas
 Author-email: shreyasajitrajendran@gmail.com
 License: UNKNOWN
-Description: # profiler
-        Repository with code for profiling other functions.
+Description: ### profiler
+        ## Repository with code for profiling other functions.
         
-        pip install -i https://test.pypi.org/simple/ connosieurofdoom==0.0.1
+        ## pip install -i https://test.pypi.org/simple/ profiler-connosieurofdoom
         
-        Prints the CPU and memory usage
+        Prints the CPU and memory usage.
+        
+        ~~~python
+        from bsort import bsort
+        from profiler import profiler
+        
+        t = [0,10,3,41,2]
+        profiler.profile(bsort,t)
+        
+        ~~~
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: Development Status :: 1 - Planning
