@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: profiler-connosieurofdoom
-Version: 0.1.1
+Name: profiler
+Version: 0.0.3
 Summary: Print memory and cpu usage
 Home-page: https://github.com/connosieurofdoom/profiler
 Author: Shreyas

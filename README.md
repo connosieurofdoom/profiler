@@ -1,6 +1,15 @@
-# profiler
-Repository with code for profiling other functions.
+### profiler
+## Repository with code for profiling other functions.
 
-pip install -i https://test.pypi.org/simple/ connosieurofdoom==0.0.1
+## pip install -i https://test.pypi.org/simple/ profiler-connosieurofdoom
 
-Prints the CPU and memory usage
+Prints the CPU and memory usage.
+
+~~~python
+from bsort import bsort
+from profiler import profiler
+
+t = [0,10,3,41,2]
+profiler.profile(bsort,t)
+
+~~~
