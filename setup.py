@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="profiler-connosieurofdoom", # Replace with your own username
-    version="0.1.1",
+    version="0.1.0",
     author="Shreyas",
     author_email="shreyasajitrajendran@gmail.com",
     description="Print memory and cpu usage",
