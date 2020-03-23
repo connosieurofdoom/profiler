@@ -1,0 +1,6 @@
+README.md
+setup.py
+connosieurofdoom.egg-info/PKG-INFO
+connosieurofdoom.egg-info/SOURCES.txt
+connosieurofdoom.egg-info/dependency_links.txt
+connosieurofdoom.egg-info/top_level.txt
