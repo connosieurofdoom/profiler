@@ -10,7 +10,7 @@ Prints the CPU and memory usage.
 ~~~python
 #Code Sample for python
 from bsort import bsort
-from profiler import profiler
+from profiler import profile
 
 t = [0,10,3,41,2]
 profiler.profile(bsort,t)
