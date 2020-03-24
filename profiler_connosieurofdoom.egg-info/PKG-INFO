@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: profiler-connosieurofdoom
-Version: 1.0.0.1
+Version: 1.0.0.0.2
 Summary: Print memory and cpu usage
 Home-page: https://github.com/connosieurofdoom/profiler
 Author: Shreyas
@@ -18,10 +18,11 @@ Description: # profiler
         ~~~python
         #Code Sample for python
         from bsort import bsort
-        from profiler import profiler
+        from profiler import profile
         
         t = [0,10,3,41,2]
-        profiler.profile(bsort,t)
+        profile(bsort,t)
+        
         
         ~~~
         Sample output:
