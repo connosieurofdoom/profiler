@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: profiler
+Name: CodeProfiler
 Version: 1.0.0.1.1
 Summary: Print memory and cpu usage
 Home-page: https://github.com/connosieurofdoom/profiler

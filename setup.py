@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="profiler-connosieurofdoom", # Replace with your own username
-    version="1.0.0.1.0",
+    name="CodeProfiler", # Replace with your own username
+    version="1.0.0.1.1",
     author="Shreyas",
     author_email="shreyasajitrajendran@gmail.com",
     description="Print memory and cpu usage",

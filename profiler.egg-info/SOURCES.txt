@@ -1,5 +1,6 @@
 README.md
 setup.py
+profiler/__init__.py
 profiler.egg-info/PKG-INFO
 profiler.egg-info/SOURCES.txt
 profiler.egg-info/dependency_links.txt
