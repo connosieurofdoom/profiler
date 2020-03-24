@@ -6,6 +6,7 @@ pip install -i https://test.pypi.org/simple/ profiler-connosieurofdoom
 
 
 Prints the CPU and memory usage.
+Logs the output to a log and a csv file too.
 
 ~~~python
 #Code Sample for python
