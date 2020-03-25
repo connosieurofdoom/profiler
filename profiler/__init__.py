@@ -49,13 +49,19 @@ def dirCreate(path):
     
 
 
-def profile(func,param):
+def profile(func,param=None):
     output = dict()
+    py = psutil.Process(os.getpid())
     output['DateTime'] = datetime.now()
     output['Function Name'] = func.__name__
     output["Input"] = param
     start = timer()
     output["Output"]=func(param)
+    try:
+        output["create_time"] = datetime.fromtimestamp(py.create_time())
+    except OSError:
+        output["create_time"] = datetime.fromtimestamp(psutil.boot_time())
+
     output["Execution Time"] = timer()-start
     output["Number of active threads"] = threading.active_count()
     output["Machine"] = platform.machine()
@@ -64,11 +70,27 @@ def profile(func,param):
     output["Processor"] = platform.processor()
     output['RAM']=str(round(psutil.virtual_memory().total / (1024.0 **3)))+" GB"
     
-    py = psutil.Process(os.getpid())
     
+    output["Process Priority"] = int(py.nice())
     output["Memory Usage"] = py.memory_info()[0]/2.**30
+    output["Cores"] = psutil.cpu_count()
     output["Cpu Usage"] = psutil.cpu_percent()
     output["Virtual Memory"] = psutil.virtual_memory()
+    try:
+        output["memory_usage"] = py.memory_full_info().uss
+    except psutil.AccessDenied:
+        output["memory_usage"] = 0
+
+    io_counters = py.io_counters()
+    output["read_bytes"] = io_counters.read_bytes
+    output["write_bytes"] = io_counters.write_bytes
+    output["no. of threads"] = py.num_threads()
+
+
+    try:
+        output["username"] = py.username()
+    except psutil.AccessDenied:
+        output["username"] = "N/A"
 
     optprinter(output)
     logger(output)
