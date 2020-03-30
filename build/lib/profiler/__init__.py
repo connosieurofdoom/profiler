@@ -6,6 +6,8 @@ import platform
 from datetime import datetime
 from csv import DictWriter
 from copy import deepcopy
+from time import perf_counter_ns
+
 def optprinter(output):
     for i in output.keys():
         print('{}:{}'.format(i,output[i]))
@@ -52,17 +54,17 @@ def dirCreate(path):
 def profile(func,param=None):
     output = dict()
     py = psutil.Process(os.getpid())
-    
+    output['Function Name'] = func.__name__
     output["Input"] = param
-    start = timer()
+    start = perf_counter_ns()
     output["Output"]=func(param)
+    stop = perf_counter_ns()
+    output["Execution Time"] = stop-start
     try:
         output["create_time"] = datetime.fromtimestamp(py.create_time())
     except OSError:
         output["create_time"] = datetime.fromtimestamp(psutil.boot_time())
     output['DateTime'] = datetime.now()
-    output['Function Name'] = func.__name__
-    output["Execution Time"] = timer()-start
     output["Number of active threads"] = threading.active_count()
     output["Machine"] = platform.machine()
     output["Platform Version"] = platform.version()
