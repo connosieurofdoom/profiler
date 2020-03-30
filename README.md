@@ -20,6 +20,7 @@ profile(bsort,t)
 ~~~
 *Sample output:*
 
+```
 DateTime:2020-03-25 11:08:50.311120 \
 Function Name:bsort \
 Input:[0, 2, 3, 10, 41] \
@@ -44,7 +45,7 @@ no. of threads:9 \
 username:LEGION\Shreyas \
 LOG path: e:\Git\CodeLibrary\Shreyas\Python\log\ \
 CSV path: e:\Git\CodeLibrary\Shreyas\Python\csv\ 
-
+```
 
 #### Comparer
 Compares the functions inside a module
