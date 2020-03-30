@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="CodeProfiler", # Replace with your own username
-    version="1.0.0.1.5",
+    version="1.0.0.1.6",
     author="Shreyas",
     author_email="shreyasajitrajendran@gmail.com",
     description="Print memory and cpu usage",
