@@ -5,7 +5,7 @@ from timeit import default_timer as timer
 import platform
 from datetime import datetime
 from csv import DictWriter
-
+from copy import deepcopy
 def optprinter(output):
     for i in output.keys():
         print('{}:{}'.format(i,output[i]))
@@ -52,8 +52,7 @@ def dirCreate(path):
 def profile(func,param=None):
     output = dict()
     py = psutil.Process(os.getpid())
-    output['DateTime'] = datetime.now()
-    output['Function Name'] = func.__name__
+    
     output["Input"] = param
     start = timer()
     output["Output"]=func(param)
@@ -61,7 +60,8 @@ def profile(func,param=None):
         output["create_time"] = datetime.fromtimestamp(py.create_time())
     except OSError:
         output["create_time"] = datetime.fromtimestamp(psutil.boot_time())
-
+    output['DateTime'] = datetime.now()
+    output['Function Name'] = func.__name__
     output["Execution Time"] = timer()-start
     output["Number of active threads"] = threading.active_count()
     output["Machine"] = platform.machine()
@@ -92,8 +92,9 @@ def profile(func,param=None):
     except psutil.AccessDenied:
         output["username"] = "N/A"
 
-    optprinter(output)
-    logger(output)
+    cpy = deepcopy(output)
+    optprinter(cpy)
+    logger(cpy)
 
-
+    return output
 
